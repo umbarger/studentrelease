@@ -1,28 +1,12 @@
-== README
+== Student Pickup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The student pickup application is designed to secure and streamline the process of student release from school.
 
-Things you may want to cover:
+If you are a team member: Please see this railscast on Foundation.  Feel free to modify any files.
 
-* Ruby version
+http://railscasts.com/episodes/417-foundation?view=asciicast
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Also here is the Foundation website:
+http://foundation.zurb.com/learn/features.html
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

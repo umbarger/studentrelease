@@ -1,0 +1,7 @@
+Mon, 03 Nov 2014 17:33:41 -0500
+README.rdoc	Mon, 03 Nov 2014 15:55:41 -0500
+app/controllers/application_controller.rb	Mon, 03 Nov 2014 15:55:41 -0500
+app/controllers/cars_controller.rb	Mon, 03 Nov 2014 17:08:34 -0500
+app/helpers/application_helper.rb	Mon, 03 Nov 2014 15:55:41 -0500
+app/helpers/cars_helper.rb	Mon, 03 Nov 2014 17:08:34 -0500
+app/models/car.rb	Mon, 03 Nov 2014 17:08:34 -0500
