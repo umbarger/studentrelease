@@ -41,6 +41,8 @@ gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
 gem 'foundation-rails'
 
+gem 'rails_layout', group: :development
+
 group :development, :test do
   gem 'guard-rspec'
   gem 'guard-livereload'
