@@ -58,19 +58,17 @@ development:
 test:
   sessions:
     default:
-      database: studentrelease_test
-      hosts:
-        - localhost:27017
-      options:
-        read: primary
-        # In the test environment we lower the retries and retry interval to
+      uri: <%= ENV['MONGOHQ_URL'] %>
         # low amounts for fast failures.
+      options:  
+        consistency: :strong    
         max_retries: 1
         retry_interval: 0
-production:
-  sessions:
-    default:
-      uri: <%= ENV['MONGOHQ_URL'] %>
-      options:
-        skip_version_check: true
-        safe: true
+
+  production:
+    sessions:
+      default:
+        uri: <%= ENV['MONGOHQ_URL'] %>
+        options:
+          skip_version_check: true
+          safe: true
