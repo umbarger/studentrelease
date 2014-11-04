@@ -39,6 +39,8 @@ gem 'spring',        group: :development
 source 'http://gems.github.com'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
+gem 'moped'
+
 gem 'foundation-rails'
 
 gem 'rails_layout', group: :development

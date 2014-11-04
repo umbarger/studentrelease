@@ -6,4 +6,5 @@ class Car
   field :color, type: String
   field :license_plate, type: String
   field :license_state, type: String
+  embedded_in :family
 end
