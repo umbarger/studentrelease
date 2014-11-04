@@ -6,10 +6,10 @@
 </p>
 
 <h2>New Student</h2>
-<%= form_for [ @family, Student.new ] do |s| %>
-  <p><%= s.label :first_name %> <%= s.text_field :first_name %></p>
-  <p><%= s.label :last_name %> <%= s.text_field :last_name %></p>
-  <p><%= s.submit %></p>
+<%= form_for [ @family, Student.new ] do |f| %>
+  <p><%= f.label :first_name %> <%= f.text_field :first_name %></p>
+  <p><%= f.label :last_name %> <%= f.text_field :last_name %></p>
+  <p><%= f.submit %></p>
 <% end %>
 
 <%= link_to 'Edit', edit_family_path(@family) %> |
