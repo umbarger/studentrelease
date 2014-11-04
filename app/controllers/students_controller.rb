@@ -10,7 +10,7 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
-    @students = Student.find( params[ :last_name ] )
+    #@students = Student.find( params[ :last_name ] )
   end
 
   # GET /students/new
