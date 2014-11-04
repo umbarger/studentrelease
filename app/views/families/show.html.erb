@@ -1,14 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Family Name</strong>
   <%= @family.name %>
 </p>
 
-<p>
-  <strong>Active:</strong>
-  <%= @family.active %>
-</p>
+<h2>New Student</h2>
+<%= form_for [ @family, Student.new ] do |s| %>
+  <p><%= s.label :first_name %> <%= s.text_field :first_name %></p>
+  <p><%= s.label :last_name %> <%= s.text_field :last_name %></p>
+  <p><%= s.submit %></p>
+<% end %>
 
 <%= link_to 'Edit', edit_family_path(@family) %> |
 <%= link_to 'Back', families_path %>
