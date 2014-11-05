@@ -5,6 +5,11 @@ class FamiliesController < ApplicationController
   # GET /families.json
   def index
     @families = Family.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @boards }
+    end
   end
 
   # GET /families/1
