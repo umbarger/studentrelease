@@ -5,7 +5,6 @@ class FamiliesController < ApplicationController
   # GET /families.json
   def index
     @families = Family.active
-    @students = Family.students
 
     respond_to do |format|
       format.html # index.html.erb
