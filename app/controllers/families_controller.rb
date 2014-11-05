@@ -4,7 +4,7 @@ class FamiliesController < ApplicationController
   # GET /families
   # GET /families.json
   def index
-    @families = Family.select(:active)
+    @families = Family.all
 
     respond_to do |format|
       format.html # index.html.erb

@@ -5,4 +5,8 @@ class Family
   embeds_many :students
   embeds_many :parents
   embeds_many :cars
+  
+  def self.active
+    where( active: true )
+  end
 end
