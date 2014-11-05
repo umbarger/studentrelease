@@ -13,10 +13,10 @@
   </thead>
   
   <tbody>
-    <% @students.each do |student| %>
+    <% @students.each do |student|  %>
       <tr>
-        <td><%= student.fname %></td>
-        <td><%= student.lname %></td>
+        <td><%= student.first_name %></td>
+        <td><%= student.last_name %></td>
       </tr>
     <% end %>
   </tbody>
