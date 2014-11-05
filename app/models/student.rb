@@ -4,5 +4,6 @@ class Student
   field :last_name, type: String
   field :grade, type: Integer
   field :teacher, type: String
-  embedded_in :family
+
+  embedded_in :family, dependent: :restrict
 end
