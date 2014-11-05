@@ -5,5 +5,5 @@ class Student
   field :grade, type: Integer
   field :teacher, type: String
 
-  embedded_in :family, dependent: :restrict
+  embedded_in :family
 end

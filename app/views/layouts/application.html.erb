@@ -12,7 +12,23 @@
   </head>
 
   <body>
-
+    <nav class="top-bar">
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to "Student Release", families_path %></a></h1>
+        </li>
+      </ul>
+    <section class="top-bar-section">
+      <ul class="right">
+        <li class="divider"></li>
+        <li><%= link_to "View Students", students_path %></li>
+        <li class="divider"></li>
+        <li><%= link_to "Parents" %></li>
+        <li class="divider"></li>
+        <li><%= link_to "School Info" %></li>
+      </ul>
+    </div>
+  </nav>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
