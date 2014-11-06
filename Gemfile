@@ -45,15 +45,15 @@ gem 'foundation-rails'
 
 gem 'rails_layout', group: :development
 
-group :development, :test do
-  gem 'guard-rspec'
-  gem 'guard-livereload'
-  gem 'spork-rails', github: 'sporkrb/spork-rails' # rubygems version not rails 4 compatible
-  gem 'guard-spork'
-  gem 'childprocess'
-end
+#group :development, :test do
+#  gem 'guard-rspec'
+#  gem 'guard-livereload'
+#  gem 'spork-rails', github: 'sporkrb/spork-rails' # rubygems version not rails 4 compatible
+#  gem 'guard-spork'
+#  gem 'childprocess'
+#end
 
-group :test do
+group :development, :test do
   gem 'rspec-rails'
   gem 'selenium-webdriver', '2.0.0'
   gem 'capybara', '2.1.0'
