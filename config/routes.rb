@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
   resources :pickups
 
-  resources :parents
-
   resources :families
-
-  resources :students
 
   resources :cars
 
