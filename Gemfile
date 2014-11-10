@@ -43,7 +43,9 @@ gem 'moped'
 
 gem 'foundation-rails'
 
-gem 'rails_layout', group: :development
+group :development do 
+  gem 'rails_layout'
+end
 
 #group :development, :test do
 #  gem 'guard-rspec'
@@ -55,15 +57,11 @@ gem 'rails_layout', group: :development
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'selenium-webdriver', '2.0.0'
-  gem 'capybara', '2.1.0'
   gem 'factory_girl_rails'
-  gem 'cucumber', '1.2.5' # Spork not supported as of Cucumber 1.3.0, need to use 1.2.5
-  gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
+  gem 'capybara'
 end
 
 group :production do 
-	gem 'thin'
+  gem 'thin'
+  gem 'rails_12factor'
 end
-gem 'rails_12factor', group: :production

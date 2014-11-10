@@ -33,7 +33,7 @@ class FamiliesController < ApplicationController
 
     respond_to do |format|
       if @family.save
-        format.html { redirect_to @family, notice: 'Family was successfully created.' }
+        format.html { redirect_to @family, notice: 'Family has been created!' }
         format.json { render :show, status: :created, location: @family }
       else
         format.html { render :new }
