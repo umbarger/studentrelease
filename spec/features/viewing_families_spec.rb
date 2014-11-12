@@ -5,6 +5,6 @@ feature "Viewing Families" do
     family = FactoryGirl.create( :family, name: "Smith" )
     visit '/'
     click_link "Smith"
-    expect( page.current_url ).to eql(family_url(family))
+    expect( page.current_url ).to eql( family_url( family ))
   end
 end
