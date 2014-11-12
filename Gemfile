@@ -37,7 +37,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 source 'http://gems.github.com'
-gem 'mongoid', github: 'mongoid/mongoid'
+gem 'mongoid'
 gem 'bson_ext'
 
 gem 'foundation-rails'
@@ -56,11 +56,11 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
 end
 
 group :test do
   gem 'capybara'
+  gem 'factory_girl_rails'
 end
 
 group :production do 

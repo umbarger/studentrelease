@@ -1,24 +1,9 @@
-<h1>Active Family List</h1>
+<h2>Active Family List</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Family Surame</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @families.each do |family| %>
-      <tr>
-        <td><%= family.name %></td>
-        <td><%= link_to 'Show', family %></td>
-        <td><%= link_to 'Edit', edit_family_path(family) %></td>
-        <td><%= link_to 'Destroy', family, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<ul>
+  <% @families.each do |family| %>
+    <li><%= link_to family.name, family %></li>
+  <% end %>
 
 <br>
 
