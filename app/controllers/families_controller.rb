@@ -10,6 +10,7 @@ class FamiliesController < ApplicationController
   # GET /families/1
   # GET /families/1.json
   def show
+    @family = Family.find( params[ :id ] )
   end
 
   # GET /families/new
@@ -19,12 +20,13 @@ class FamiliesController < ApplicationController
 
   # GET /families/1/edit
   def edit
+    @family = Family.find( params[ :id ] )
   end
 
   # POST /families
   # POST /families.json
   def create
-    @family = Family.new(family_params)
+    @family = Family.new( family_params )
 
     respond_to do |format|
       if @family.save
@@ -41,8 +43,8 @@ class FamiliesController < ApplicationController
   # PATCH/PUT /families/1.json
   def update
     respond_to do |format|
-      if @family.update(family_params)
-        format.html { redirect_to @family, notice: 'Family was successfully updated.' }
+      if @family.update( family_params )
+        format.html { redirect_to @family, notice: 'Family has been updated.' }
         format.json { render :show, status: :ok, location: @family }
       else
         format.html { render :edit }
@@ -64,11 +66,11 @@ class FamiliesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_family
-      @family = Family.find(params[:id])
+      @family = Family.find( params[ :id ]) 
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def family_params
-      params.require(:family).permit(:name, :active)
+      params.require( :family ).permit( :name, :active ) 
     end
 end
