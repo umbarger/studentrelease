@@ -14,6 +14,7 @@ class FamiliesController < ApplicationController
 
   # GET /families/new
   def new
+    @family = Family.new
   end
 
   # GET /families/1/edit
@@ -68,6 +69,6 @@ class FamiliesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def family_params
-      params.require( :family ).permit( :name, :active ) 
+      params.require( :family ).permit( :name ) 
     end
 end

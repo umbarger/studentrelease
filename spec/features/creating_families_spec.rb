@@ -13,7 +13,6 @@ feature 'Creating Families' do
 
     expect( page ).to have_content ( 'Family has been created!' )
     expect( page.current_url ).to eql( family_url( Family.where( name: "Hamilton" ).first ) )
-    expect( page ).to have_title( "Hamilton - Family - Student Pickup" ) 
   end
 
   scenario "can not create a family without a name" do 
