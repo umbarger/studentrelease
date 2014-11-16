@@ -12,13 +12,13 @@ feature "Creating Students" do
   scenario "Creating a student" do
     fill_in "Name", with: "Steven"
     fill_in "Grade", with: "3"
-    click_button "Add Student"
+    click_button "Save Student"
 
     expect( page ).to have_content( "Student added." )
   end
 
   scenario "Creating a student without valid attributes fails" do
-    click_button "Add Student"
+    click_button "Save Student"
 
     expect( page ).to have_content( "Student not added." ) 
     expect( page ).to have_content( "Name can't be blank." )

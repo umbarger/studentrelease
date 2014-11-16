@@ -1,10 +1,20 @@
 <h2>Active Family List</h2>
 
-<ul>
+<table>
+<thead>
+    <tr>
+      <th>Family</th>
+      <th><th>
+    </tr>
+</thead>
+<tbody>
   <% @families.each do |family| %>
-    <li><%= link_to family.name, family %></li>
+    <tr>
+      <td><%= link_to family.name, family %></td>
+    </tr>
   <% end %>
-</ul>
+</tbody>
+</table>
 
 <br>
 
