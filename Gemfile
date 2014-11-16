@@ -37,13 +37,13 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 source 'http://gems.github.com'
-gem 'mongoid'
+gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
 
 gem 'foundation-rails'
 
 group :development do 
-  gem 'rails_layout'
+  gem 'rails_layout', github: 'RailsApps/rails_layout'
 end
 
 #group :development, :test do

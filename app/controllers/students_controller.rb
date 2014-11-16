@@ -15,10 +15,10 @@ class StudentsController < ApplicationController
     @student = @family.students.build( student_params )
     
     if @student.save
-      flash[:notice] = "Student has been created."
+      flash[:notice] = "Student added."
       redirect_to [@family, @student]
     else
-      flash[:alert] = "Student has not been created."
+      flash[:alert] = "Student not added."
       render "new"
     end
   end
