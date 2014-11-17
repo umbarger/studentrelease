@@ -4,7 +4,7 @@ class FamiliesController < ApplicationController
   # GET /families
   # GET /families.json
   def index
-    @families = Family.all
+    @families = Family.active
   end
 
   # GET /families/1
@@ -54,7 +54,7 @@ class FamiliesController < ApplicationController
   # DELETE /families/1
   # DELETE /families/1.json
   def destroy
-    @family.destroy
+    @family.update_attribute( :active, false )
     respond_to do |format|
       format.html { redirect_to families_url, notice: 'Family was deleted.' }
       format.json { head :no_content }
@@ -62,12 +62,10 @@ class FamiliesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_family
       @family = Family.find( params[ :id ])
     end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
+    
     def family_params
       params.require( :family ).permit( :name ) 
     end
