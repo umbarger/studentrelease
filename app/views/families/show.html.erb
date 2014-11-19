@@ -11,13 +11,23 @@
             method: :delete, 
             data:{ confirm: "Are you sure you want to delete this family?" } %> |
 
-<ul id='students'>
+
+<h3>Students</h3>
+<table>
+  <thead>
+    <tr>
+      <td>Name</td>
+    </tr>
+  </thead>
+  <tbody>
   <% @family.students.each do |student| %>
-    <li>
-      #<%= link_to student.first_name, [ @family, student ] %>
-    </li>
+    <tr>
+      <td><%= link_to student.first_name, [ @family, student ] %></td>
+    </tr>
   <% end %>
-</ul>
+  </tbody>
+</table>
+
 
 <%= link_to 'Add New Student',
             new_family_student_path( @family ) %>
