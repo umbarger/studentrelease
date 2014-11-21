@@ -4,6 +4,7 @@ class Family
   field :active, type: Boolean, default: true
  
   embeds_many :students
+  embeds_many :parents
 
   validates_presence_of :name, message: 'Family has not been created!'
 
