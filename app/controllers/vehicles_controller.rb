@@ -1,6 +1,6 @@
 class VehiclesController < ApplicationController
 
-  before_action :set_vehicle
+  before_action :set_family
   before_action :set_vehicle, only: [ :show, :edit, :update, :destroy ]
 
   def set_vehicle

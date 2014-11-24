@@ -12,13 +12,13 @@
             data:{ confirm: "Are you sure you want to delete this family?" } %> |
 
 <table>
+</tbody>
 <tr>
 <td>
-<h3>Students</h3>
 <table id='students'>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Students</th>
     </tr>
   </thead>
   <tbody>
@@ -32,11 +32,10 @@
 </td>
 
 <td>
-<h3>Parents</h3>
 <table id='parents'>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Parents</th>
     </tr>
   </thead>
   <tbody>
@@ -49,7 +48,27 @@
 </table>
 </td>
 </tr>
+<tr>
+<td>
+<table>
+  <thead>
+    <tr>
+      <th>Vehicles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @family.vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= link_to vehicle.model, [ @family, vehicle ] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</td>
+</tr>
+</tbody>
 </table>
 
 <%= link_to 'Add New Student', new_family_student_path( @family ) %>
 <%= link_to 'Add New Parent', new_family_parent_path( @family ) %>
+<%= link_to 'Add New Vehicle', new_family_vehicle_path( @family ) %>
