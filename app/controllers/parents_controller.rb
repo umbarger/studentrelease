@@ -1,20 +1,20 @@
-class StudentsController < ApplicationController
+class ParentsController < ApplicationController
 
   before_action :set_family
   before_action :set_parent, only: [ :show, :edit, :update, :destroy ]
 
-  def set_student
-    @student = @family.parents.find( params[:id] )
+  def set_parent
+    @parent = @family.parents.find( params[:id] )
   end
 
   def new
-    @student = @family.parents.build
+    @parent = @family.parents.build
   end
 
   def create
-    @student = @family.parents.build( student_params )
+    @parent = @family.parents.build( parent_params )
     
-    if @student.save
+    if @parent.save
       flash[:notice] = "Parent added."
       redirect_to [@family, @parent ]
     else

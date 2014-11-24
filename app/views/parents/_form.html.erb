@@ -1,0 +1,26 @@
+<%= form_for [ @family, @parent ] do |f| %>
+  <% if @parent.errors.any? %>
+    <div id="error_explination">
+
+      <h2><%= pluralize( @family.errors.count, "error" ) %>
+      prohibited this parent from being saved:</h2>
+
+      <ul>
+
+      <% @parent.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+
+      </ul>
+
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :first_name, "Name"  %><br>
+    <%= f.text_field :first_name %>
+  </p>
+
+  <%= f.submit "Save Parent" %>
+
+<% end %>
