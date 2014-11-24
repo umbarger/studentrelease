@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :families do
     resources :students
     resources :parents
+    resources :vehicles
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

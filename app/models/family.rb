@@ -5,6 +5,7 @@ class Family
  
   embeds_many :students
   embeds_many :parents
+  embeds_many :vehicles
 
   validates_presence_of :name, message: 'Family has not been created!'
 

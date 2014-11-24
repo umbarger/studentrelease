@@ -40,7 +40,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @family.parents.each do |family| %>
+    <% @family.parents.each do |parent| %>
       <tr>
         <td><%= link_to parent.first_name, [ @family, parent ] %></td>
       </tr>
