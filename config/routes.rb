@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :families do
     resources :students
     resources :parents

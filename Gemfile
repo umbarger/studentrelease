@@ -36,6 +36,7 @@ gem 'spring',        group: :development
 
 gem 'mongoid'
 gem 'bson_ext'
+gem 'devise'
 
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
