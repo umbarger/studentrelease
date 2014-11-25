@@ -9,7 +9,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runti
-
+gem 'sass-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -34,16 +34,11 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'mongoid', github: 'mongoid/mongoid'
+gem 'mongoid'
 gem 'bson_ext'
 
-gem 'therubyracer'
-gem 'less-rails'
-gem 'twitter-bootstrap-rails'
-
-group :development do 
-  gem 'rails_layout', github: 'RailsApps/rails_layout'
-end
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 
 #group :development, :test do
 #  gem 'guard-rspec'
