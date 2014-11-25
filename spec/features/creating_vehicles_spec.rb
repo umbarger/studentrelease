@@ -18,13 +18,12 @@ feature 'Creating Vehicles' do
     fill_in 'State', with: 'North Carolina'
     click_button 'Save Vehicle'
 
-    expect( page ).to have_content ( 'Vehicle has been added!' )
-    expect( page.current_url ).to eql( vehicle_url( Vehicle.where( name: "Acura" ).first ) )
+    expect( page ).to have_content ( 'Vehicle added.' )
   end
 
-  scenario "cannot add a vehicle without a name" do 
-    click_button 'Add New Vehicle'
+  scenario "Cannot add a vehicle without a name" do 
+    click_button 'Save Vehicle'
 
-    expect( page ).to have_content( "Vehicle has not been added!" ) 
+    expect( page ).to have_content( "Vehicle not added!" ) 
   end
 end

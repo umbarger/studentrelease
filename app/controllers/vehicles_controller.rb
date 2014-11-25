@@ -18,7 +18,7 @@ class VehiclesController < ApplicationController
       flash[:notice] = "Vehicle added."
       redirect_to [@family, @vehicle]
     else
-      flash[:alert] = "Vehicle not added."
+      flash[:alert] = "Vehicle not added!"
       render "new"
     end
   end

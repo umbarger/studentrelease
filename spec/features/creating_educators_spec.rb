@@ -7,17 +7,16 @@ feature 'Creating Educators' do
     click_link 'New Educator'
   end
 
-pending  scenario "can create a educator" do
+pending  scenario "Can create a educator" do
     fill_in 'Educator Name', with: 'Bill'
     click_button 'Create Educator'
 
-    expect( page ).to have_content ( 'Educator has been created!' )
-    expect( page.current_url ).to eql( educator_url( Educator.where( name: "Bill" ).first ) )
+    expect( page ).to have_content ( 'Educator created!' )
   end
 
-pending  scenario "cannot create a educator without a name" do 
+pending  scenario "Cannot create a educator without a name" do 
     click_button 'Create Educator'
 
-    expect( page ).to have_content( "Educator has not been created!" ) 
+    expect( page ).to have_content( "Educator not created!" ) 
   end
 end
