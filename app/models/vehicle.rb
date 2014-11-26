@@ -8,7 +8,7 @@ class Vehicle
   field :license, type: String
   field :state, type: String
   field :qr_num, type: Integer
-  field :active, type: Boolean
+  field :active, type: Boolean, default: true
 
   embedded_in :family
 

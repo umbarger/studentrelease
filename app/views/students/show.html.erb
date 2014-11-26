@@ -1,5 +1,6 @@
 <div id='student'>
   <h2><%= @student.first_name %></h2>
   <p>Grade: <%= @student.grade %></p>
-  <%= link_to "#{@family.name}'s Family Page", family_path(@family)   %>
+  <%= link_to "#{@family.name}'s Family Page", family_path( @family )   %>
+  <%= link_to "Edit #{@student.first_name}", edit_family_student_path( @family, @student )%>
 </div>

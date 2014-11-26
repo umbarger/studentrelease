@@ -11,6 +11,9 @@ class StudentsController < ApplicationController
     @student = @family.students.build
   end
 
+  def edit
+  end
+
   def create
     @student = @family.students.build( student_params )
     
@@ -34,6 +37,10 @@ class StudentsController < ApplicationController
   private
     def set_family
       @family = Family.find( params[ :family_id ] )
+    end
+
+    def set_student
+      @student = @family.students.find( params[:id] )
     end
 
     def student_params

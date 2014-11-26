@@ -3,12 +3,11 @@ class VehiclesController < ApplicationController
   before_action :set_family
   before_action :set_vehicle, only: [ :show, :edit, :update, :destroy ]
 
-  def set_vehicle
-    @vehicle = @family.vehicles.find( params[:id] )
-  end
-
   def new
     @vehicle = @family.vehicles.build
+  end
+
+  def edit
   end
 
   def create
@@ -34,6 +33,10 @@ class VehiclesController < ApplicationController
   private
     def set_family
       @family = Family.find( params[ :family_id ] )
+    end
+
+    def set_vehicle
+      @vehicle = @family.vehicles.find( params[:id] )
     end
 
     def vehicle_params

@@ -2,7 +2,7 @@ class Student
   include Mongoid::Document
   field :first_name, type: String
   field :grade, type: Integer
-  field :active, type: Boolean
+  field :active, type: Boolean, default: true
 
   embedded_in :family
 

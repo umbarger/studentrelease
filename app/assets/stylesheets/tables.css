@@ -7,18 +7,20 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 */
 
 table{
+/*	
 	width:100%;
+*/
 	border-collapse:collapse;
 	table-layout:auto;
 	vertical-align:top;
 	margin-bottom:15px;
-	border:1px solid #CCCCCC;
+	border:0px solid #CCCCCC;
 	}
 
 table thead th{
 	color:#FFFFFF;
 	background-color:#666666;
-	border:1px solid #CCCCCC;
+	border:0px solid #CCCCCC;
 	border-collapse:collapse;
 	text-align:center;
 	table-layout:auto;
@@ -28,8 +30,8 @@ table thead th{
 table tbody td{
 	vertical-align:top;
 	border-collapse:collapse;
-	border-left:1px solid #CCCCCC;
-	border-right:1px solid #CCCCCC;
+	border-left:0px solid #CCCCCC;
+	border-right:0px solid #CCCCCC;
 	}
 	
 table thead th, table tbody td{
