@@ -37,8 +37,9 @@ gem 'spring',        group: :development
 gem 'mongoid'
 gem 'bson_ext'
 
-gem 'bootstrap-sass'
-gem 'autoprefixer-rails'
+gem 'twitter-bootstrap-rails'
+#gem 'bootstrap-sass'
+#gem 'autoprefixer-rails'
 
 #group :development, :test do
 #  gem 'guard-rspec'
