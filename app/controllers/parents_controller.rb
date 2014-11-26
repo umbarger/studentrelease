@@ -22,6 +22,14 @@ class ParentsController < ApplicationController
       render "new"
     end
   end
+
+  def destroy
+    @parent.update_attribute( :active, false )
+    respond_to do |format|
+      format.html { redirect_to family_path( @family ), notice: 'Parent was deleted.' }
+      format.json { head :no_content }
+    end
+  end
   
   private
     def set_family

@@ -22,6 +22,14 @@ class VehiclesController < ApplicationController
       render "new"
     end
   end
+
+  def destroy
+    @vehicle.update_attribute( :active, false )
+    respond_to do |format|
+      format.html { redirect_to family_path( @family ), notice: 'Vehicle was deleted.' }
+      format.json { head :no_content }
+    end
+  end
   
   private
     def set_family

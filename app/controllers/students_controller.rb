@@ -23,6 +23,14 @@ class StudentsController < ApplicationController
     end
   end
   
+  def destroy
+    @student.update_attribute( :active, false )
+    respond_to do |format|
+      format.html { redirect_to family_path( @family ), notice: 'Student was deleted.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
     def set_family
       @family = Family.find( params[ :family_id ] )
