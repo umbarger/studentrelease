@@ -14,7 +14,7 @@ class Family
 
   validates_presence_of :name, message: 'Family has not been created!'
   validates_presence_of :email, message: 'Family has not been created!'
-  
+
   def self.active
     where( active: true )
   end

@@ -1,20 +1,34 @@
-<h2>Active Family List</h2>
-
-<table>
-<thead>
+<%- model_class = Family -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => "Viewing All " + model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
     <tr>
-      <th>Family</th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
-</thead>
-<tbody>
-  <% @families.each do |family| %>
-    <tr>
-      <td><%= link_to family.name, family %></td>
-    </tr>
-  <% end %>
-</tbody>
+  </thead>
+  <tbody>
+    <% @families.each do |family| %>
+      <tr>
+        <td><%= link_to family.name, family_path(family) %></td>
+        <td><%= family.email %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_family_path(family), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      family_path(family),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Family', new_family_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_family_path,
+            :class => 'btn btn-primary' %>
