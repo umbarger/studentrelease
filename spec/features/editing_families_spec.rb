@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature "Editing Families" do
   before do
-    FactoryGirl.create( :family, name: "Thomas" )
+    FactoryGirl.create( :family, name: "Thomas", email: "thomas@email.com" )
 
     visit "/"
     click_link "Thomas"
