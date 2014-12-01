@@ -14,6 +14,13 @@ class StudentsController < ApplicationController
   def edit
   end
 
+  def index
+    redirect_to[@family,@student]
+  end
+
+  def show
+  end
+
   def create
     @student = @family.students.build( student_params )
     
