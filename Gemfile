@@ -30,7 +30,13 @@ gem 'bson_ext'
 gem 'twitter-bootstrap-rails'
 
 # RJR is the Ruby Java Bridge
-gem 'rjb'
+#gem 'rjb'
+
+# Gem QREncode -> wrapper for libqrencode
+gem 'qrencoder'
+
+# Dragonfly image/asset management 
+# gem 'dragonfly'
 
 # development and test group
 group :development, :test do
