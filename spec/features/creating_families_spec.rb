@@ -4,7 +4,7 @@ feature 'Creating Families' do
   before do
     visit '/' 
 
-    click_link 'New Family'
+    click_link 'New'
   end
 
   scenario "can create a family" do

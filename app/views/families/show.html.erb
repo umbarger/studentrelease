@@ -8,50 +8,77 @@
   <dd><%= @family.email %></dd>
 </dl>
 
+<h3>Students</h3>
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Students</th>
+      <th>Student</th>
+      <th>Grade</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @family.students.each do |student| %>
       <tr>
-        <td><%= link_to student.first_name, [ @family, student ]  %></td>
+        <td><%= student.first_name  %></td>
+        <td><%= student.grade %></td>
+        <td><%= link_to "View", [ @family, student ], :class =>"btn btn-default btn-xs" %>  
       </tr>
     <% end %>
   </tbody>
 </table>
+<%= link_to "New Student",
+            new_family_student_path( @family ),
+            :class => 'btn btn-primary' %>
 
+<h3>Parents</h3>
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Parents</th>
+      <th>Parent</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @family.parents.each do |parent| %>
       <tr>
-        <td><%= link_to parent.first_name, [ @family, parent ] %></td>
+        <td><%= parent.first_name %></td>
+        <td><%= link_to "View", [ @family, parent ], :class =>"btn btn-default btn-xs" %> 
       </tr>
     <% end %>
   </tbody>
 </table>
+<%= link_to "New Parent",
+            new_family_parent_path( @family ),
+            :class => 'btn btn-primary' %>
 
+<h3>Vehicles</h3>
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Vehicles</th>
+      <th>Year</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Color</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @family.vehicles.each do |vehicle| %>
       <tr>
-        <td><%= link_to vehicle.model, [ @family, vehicle ] %></td>
+        <td><%= vehicle.year %></td>
+        <td><%= vehicle.make %></td>
+        <td><%= vehicle.model %></td>
+        <td><%= vehicle.color %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<%= link_to "New Vehicle",
+            new_family_vehicle_path( @family ),
+            :class => 'btn btn-primary' %>
+<br>
+<br>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               families_path, :class => 'btn btn-default'  %>
