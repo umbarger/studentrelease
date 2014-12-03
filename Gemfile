@@ -1,5 +1,4 @@
 source 'http://gems.github.com'
-source 'http://rubygems.org'
 ruby '2.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -29,14 +28,8 @@ gem 'bson_ext'
 # Bootstrap frontend management
 gem 'twitter-bootstrap-rails'
 
-# RJR is the Ruby Java Bridge
-#gem 'rjb'
-
 # Gem QREncode -> wrapper for libqrencode
 gem 'qrencoder'
-
-# Dragonfly image/asset management 
-# gem 'dragonfly'
 
 # development and test group
 group :development, :test do
