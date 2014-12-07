@@ -47,7 +47,7 @@ class StudentsController < ApplicationController
     end
 
     def set_student
-      @student = @family.students.active.find( params[:id] )
+      @student = @family.students.find( params[:id] )
     end
 
     def student_params

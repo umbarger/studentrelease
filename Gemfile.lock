@@ -21,7 +21,12 @@ GIT
       warden (~> 1.2.3)
 
 GEM
+<<<<<<< HEAD
   remote: https://rubygems.org/
+=======
+  remote: http://gems.github.com/
+  remote: http://rubygems.org/
+>>>>>>> parent of 22bdd02... changed families index.html to a different class
   specs:
     actionmailer (4.1.8)
       actionpack (= 4.1.8)

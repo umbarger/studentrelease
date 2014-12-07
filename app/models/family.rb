@@ -11,7 +11,6 @@ class Family
   embeds_many :students
   embeds_many :parents
   embeds_many :vehicles
-  embeds_many :qrcodes
 
   validates_presence_of :name, message: 'Family has not been created!'
   validates_presence_of :email, message: 'Family has not been created!'

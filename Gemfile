@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 source 'https://rubygems.org'
 
+=======
+source 'http://gems.github.com'
+source 'http://rubygems.org'
+>>>>>>> parent of 22bdd02... changed families index.html to a different class
 ruby '2.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -29,11 +34,19 @@ gem 'bson_ext'
 # Bootstrap frontend management
 gem 'twitter-bootstrap-rails'
 
+<<<<<<< HEAD
 # Devise gem
 gem 'devise', :git => 'https://github.com/plataformatec/devise'
+=======
+# RJR is the Ruby Java Bridge
+#gem 'rjb'
+>>>>>>> parent of 22bdd02... changed families index.html to a different class
 
 # Gem QREncode -> wrapper for libqrencode
 # gem 'qrencoder'
+
+# Dragonfly image/asset management 
+# gem 'dragonfly'
 
 # development and test group
 group :development, :test do
