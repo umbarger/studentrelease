@@ -1,0 +1,5 @@
+language: ruby
+cache: bundler
+bundler_args: --without production
+before_install:
+    - gem update --system

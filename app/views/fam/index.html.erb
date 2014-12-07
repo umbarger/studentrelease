@@ -1,0 +1,20 @@
+<h2>Active Family List</h2>
+
+<table>
+<thead>
+    <tr>
+      <th>Family</th>
+    </tr>
+</thead>
+<tbody>
+  <% @families.each do |family| %>
+    <tr>
+      <td><%= link_to family.name, family %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Family', new_family_path %>
