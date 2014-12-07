@@ -1,4 +1,5 @@
-source 'http://gems.github.com'
+source 'https://rubygems.org'
+
 ruby '2.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -22,14 +23,17 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # MongoDB Object Mapper
-gem 'mongoid'
+gem 'mongoid', :git => 'https://github.com/mongoid/mongoid.git'
 gem 'bson_ext'
 
 # Bootstrap frontend management
 gem 'twitter-bootstrap-rails'
 
+# Devise gem
+gem 'devise', :git => 'https://github.com/plataformatec/devise'
+
 # Gem QREncode -> wrapper for libqrencode
-gem 'qrencoder'
+# gem 'qrencoder'
 
 # development and test group
 group :development, :test do
