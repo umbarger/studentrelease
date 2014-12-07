@@ -1,10 +1,30 @@
 Rails.application.routes.draw do
+  get 'passwords/new'
+
+  get 'passwords/create'
+
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'confirmations/new'
+
+  get 'confirmations/create'
+
   get 'registrations/update'
 
   get 'home/index'
 
-  devise_for :users, :controllers => {:registrations => "registrations" }
- 
+  devise_for :educators, :controllers => {:registrations => "registrations", 
+                                          :confirmations => "confirmations", 
+                                          :sessions => "sessions",
+                                          :passwords => "passwords" }
+
+  devise_for :teachers, :controllers => { :registrations => "registrations", 
+                                          :confirmations => "confirmations",
+                                          :sessions => "sessions",
+                                          :passwords => "passwords" }
+
   resources :families do
     resources :students
     resources :parents
