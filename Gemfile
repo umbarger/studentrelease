@@ -43,6 +43,7 @@ end
 
 # test group
 group :test do
+  gem 'rake'
   gem 'capybara'
   gem 'factory_girl_rails'
 end
