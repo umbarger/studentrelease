@@ -7,7 +7,6 @@ class Vehicle
   field :color, type: String
   field :license, type: String
   field :state, type: String
-  field :qr, type: String
   field :active, type: Boolean, default: true
 
   embedded_in :family

@@ -25,6 +25,12 @@ Rails.application.routes.draw do
                                           :sessions => "sessions",
                                           :passwords => "passwords" }
 
+  devise_for :parents, :controllers => { :registrations => "registrations", 
+                                          :confirmations => "confirmations",
+                                          :sessions => "sessions",
+                                          :passwords => "passwords" }
+
+
   resources :families do
     resources :students
     resources :parents
@@ -32,17 +38,18 @@ Rails.application.routes.draw do
   end
 
   resources :educators
-  
+
   resources :teachers
+  
+  # resources :teachers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root to: 'home#index'
+  root to: 'families#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

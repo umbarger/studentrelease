@@ -1,14 +1,17 @@
 class Student
   include Mongoid::Document
   field :first_name, type: String
-  field :grade, type: Integer
+  field :last_name, type: String
   field :active, type: Boolean, default: true
 
   embedded_in :family
+  belongs_to :teacher, autosave: true
 
-  validates_presence_of :first_name, message: "Name can't be blank."
-  validates_presence_of :grade, message: "Grade cannot be blank."
-  validates_numericality_of :grade, greater_than_or_equal_to: 0, less_than: 13, only_integer: true
+  accepts_nested_attributes_for :teacher
+
+  validates_presence_of :first_name, message: " can't be blank."
+  validates_presence_of :last_name, message: " can't be blank."
+  validates_presence_of :teacher, message: " must have teacher."
 
   def self.active
     where( active: true )

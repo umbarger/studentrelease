@@ -14,7 +14,7 @@
       </div>
     </div>
   <% end %>
-
+<div class ="row" >
   <div class="control-group">
     <%= f.label :first_name, :class => 'control-label' %>
     <div class="controls">
@@ -23,14 +23,20 @@
     <%= error_span(@student[:first_name]) %>
   </div>
   <div class="control-group">
-    <%= f.label :grade, :class => 'control-label' %>
+    <%= f.label :last_name, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :grade, :class => 'form-control' %>
+      <%= f.text_field :last_name, :class => 'form-control' %>
     </div>
-    <%= error_span(@student[:grade]) %>
+    <%= error_span(@student[:last_name]) %>
   </div>
-
-
+  <div class="control-group">
+    <%= f.label :teacher, :class => 'control-label' %>
+    <div class="controls">
+      <%= collection_select( :student, :teacher_id, Teacher.active, :id, :last_name ) %>
+    </div>
+    <%= error_span(@student[:teacher_id]) %>
+  </div>
   <%= f.submit nil, :class => 'btn btn-primary' %>
+</div>
 
 <% end %>

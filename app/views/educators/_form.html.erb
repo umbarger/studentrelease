@@ -1,52 +1,40 @@
-<%= form_for @educator, :html => { :class => "form-horizontal educator" } do |f| %>
+<%= simple_form_for @educator, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :email %>
+  <%= error_span(@educator[:email]) %>
+  <%= f.input :username %>
+  <%= error_span(@educator[:username]) %>
+  <%= f.input :encrypted_password %>
+  <%= error_span(@educator[:encrypted_password]) %>
+  <%= f.input :active %>
+  <%= error_span(@educator[:active]) %>
+  <%= f.input :reset_password_token %>
+  <%= error_span(@educator[:reset_password_token]) %>
+  <%= f.input :reset_password_sent_at %>
+  <%= error_span(@educator[:reset_password_sent_at]) %>
+  <%= f.input :remember_created_at %>
+  <%= error_span(@educator[:remember_created_at]) %>
+  <%= f.input :current_sign_in_at %>
+  <%= error_span(@educator[:current_sign_in_at]) %>
+  <%= f.input :last_sign_in_at %>
+  <%= error_span(@educator[:last_sign_in_at]) %>
+  <%= f.input :current_sign_in_ip %>
+  <%= error_span(@educator[:current_sign_in_ip]) %>
+  <%= f.input :last_sign_in_ip %>
+  <%= error_span(@educator[:last_sign_in_ip]) %>
+  <%= f.input :confirmation_token %>
+  <%= error_span(@educator[:confirmation_token]) %>
+  <%= f.input :confirmed_at %>
+  <%= error_span(@educator[:confirmed_at]) %>
+  <%= f.input :confirmation_sent_at %>
+  <%= error_span(@educator[:confirmation_sent_at]) %>
+  <%= f.input :unconfirmed_email %>
+  <%= error_span(@educator[:unconfirmed_email]) %>
+  <%= f.input :first_name %>
+  <%= error_span(@educator[:first_name]) %>
+  <%= f.input :last_name %>
+  <%= error_span(@educator[:last_name]) %>
 
-    <% if @educator.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@educator.errors.count, "error") %> prohibited this educator from being saved:</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-        <% @educator.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    </div>
-  <% end %>
-
-  <div class="control-group">
-    <%= f.label :first_name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :first_name, :class => 'form-control' %>
-    </div>
-    <%= error_span(@educator[:first_name]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :last_name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :last_name, :class => 'form-control' %>
-    </div>
-    <%= error_span(@educator[:last_name]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :email, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :email, :class => 'form-control' %>
-    </div>
-    <%= error_span(@educator[:email]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :active, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :active, :class => 'form-control' %>
-    </div>
-    <%= error_span(@educator[:active]) %>
-  </div>
-
-
-  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            educators_path, :class => 'btn btn-default' %>
-
+                educators_path, :class => 'btn btn-default' %>
 <% end %>

@@ -1,4 +1,54 @@
 GIT
+  remote: https://github.com/bmabey/database_cleaner
+  revision: f4d6677c817461069602debc14a928e48044efb2
+  specs:
+    database_cleaner (1.3.0)
+
+GIT
+  remote: https://github.com/cowboyd/therubyracer
+  revision: 8dae8f789014a22512ee3c6f630d8f958e696ab8
+  specs:
+    therubyracer (0.12.1)
+      libv8 (~> 3.16.14.0)
+      ref
+
+GIT
+  remote: https://github.com/heroku/rails_12factor
+  revision: 5fef021a1aaf53ee43a7895124fa10c0c548c5ab
+  specs:
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+
+GIT
+  remote: https://github.com/jnicklas/capybara
+  revision: 4161bbc560631e61e611d59bf797eeb59a6b1021
+  specs:
+    capybara (2.4.1)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
+
+GIT
+  remote: https://github.com/macournoyer/thin
+  revision: a1d69d683b820d4355aaaa4454f4212d76f712db
+  specs:
+    thin (1.6.3)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0)
+      rack (~> 1.0)
+
+GIT
+  remote: https://github.com/metaskills/less-rails
+  revision: c9f2cb92a32825684f4ad6d448028e6388a4e683
+  specs:
+    less-rails (2.6.0)
+      actionpack (>= 3.1)
+      less (~> 2.6.0)
+
+GIT
   remote: https://github.com/mongoid/mongoid.git
   revision: f49a71488ecc98a2fecdf764cd67fb8e12c068b3
   specs:
@@ -20,13 +70,51 @@ GIT
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
 
+GIT
+  remote: https://github.com/rails/jbuilder
+  revision: 9783705ac57aff3da66ed9b5d1cdb3969316c81d
+  specs:
+    jbuilder (2.2.5)
+      activesupport (>= 3.0.0, < 5)
+      multi_json (~> 1.2)
+
+GIT
+  remote: https://github.com/rails/spring
+  revision: af55ad6b2ab33b46ea8ed0afce1be895f905d28a
+  specs:
+    spring (1.2.0)
+
+GIT
+  remote: https://github.com/rails/turbolinks
+  revision: ad127fc0c99fb21365cff9ba954cc86d09ba5356
+  specs:
+    turbolinks (2.5.3)
+      coffee-rails
+
+GIT
+  remote: https://github.com/ryanb/cancan
+  revision: 4560928dc375f9b31de00381c98334eb6aabc4b9
+  specs:
+    cancan (1.6.10)
+
+GIT
+  remote: https://github.com/thoughtbot/factory_girl_rails
+  revision: dec37e819e48ae2ef5030edf3de36deb239c5ca2
+  specs:
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
+
+GIT
+  remote: https://github.com/voloko/sdoc
+  revision: 087940a7220b523a3a3758479552fcf81329b320
+  specs:
+    sdoc (0.4.1)
+      json (~> 1.7, >= 1.7.7)
+      rdoc (~> 4.0)
+
 GEM
-<<<<<<< HEAD
   remote: https://rubygems.org/
-=======
-  remote: http://gems.github.com/
-  remote: http://rubygems.org/
->>>>>>> parent of 22bdd02... changed families index.html to a different class
   specs:
     actionmailer (4.1.8)
       actionpack (= 4.1.8)
@@ -57,14 +145,7 @@ GEM
     arel (5.0.1.20140414130214)
     bcrypt (3.1.9)
     bson (2.3.0)
-    bson_ext (1.5.1)
     builder (3.2.2)
-    capybara (2.4.4)
-      mime-types (>= 1.16)
-      nokogiri (>= 1.3.3)
-      rack (>= 1.0.0)
-      rack-test (>= 0.5.4)
-      xpath (~> 2.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -72,27 +153,24 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    commonjs (0.2.7)
     connection_pool (2.1.0)
     daemons (1.1.9)
-    database_cleaner (1.3.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.2.2)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.5.0)
-      factory_girl (~> 4.5.0)
-      railties (>= 3.0.0)
     hike (1.2.3)
     i18n (0.6.11)
-    jbuilder (2.2.5)
-      activesupport (>= 3.0.0, < 5)
-      multi_json (~> 1.2)
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    less (2.6.0)
+      commonjs (~> 0.2.7)
+    libv8 (3.16.14.7)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
@@ -121,9 +199,6 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.8)
       sprockets-rails (~> 2.0)
-    rails_12factor (0.0.3)
-      rails_serve_static_assets
-      rails_stdout_logging
     rails_serve_static_assets (0.0.2)
     rails_stdout_logging (0.0.3)
     railties (4.1.8)
@@ -132,8 +207,9 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
-    rdoc (4.1.2)
+    rdoc (4.2.0)
       json (~> 1.4)
+    ref (1.0.5)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
     rspec-core (3.1.7)
@@ -152,16 +228,9 @@ GEM
       rspec-mocks (~> 3.1.0)
       rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
-    sass (3.2.19)
-    sass-rails (4.0.5)
-      railties (>= 4.0.0, < 5.0)
-      sass (~> 3.2.2)
-      sprockets (~> 2.8, < 3.0)
-      sprockets-rails (~> 2.0)
-    sdoc (0.4.1)
-      json (~> 1.7, >= 1.7.7)
-      rdoc (~> 4.0)
-    spring (1.2.0)
+    simple_form (3.1.0)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -171,15 +240,9 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    thin (1.6.3)
-      daemons (~> 1.0, >= 1.0.9)
-      eventmachine (~> 1.0)
-      rack (~> 1.0)
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
-    turbolinks (2.5.2)
-      coffee-rails
     twitter-bootstrap-rails (3.2.0)
       actionpack (~> 4.1)
       execjs (~> 2.2)
@@ -199,23 +262,24 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bson_ext
-  capybara
+  cancan!
+  capybara!
   coffee-rails (~> 4.0.0)
-  database_cleaner
+  database_cleaner!
   devise!
-  factory_girl_rails
-  jbuilder (~> 2.0)
+  factory_girl_rails!
+  jbuilder!
   jquery-rails
+  less-rails!
   mongoid!
   rails (= 4.1.8)
-  rails_12factor
-  rake
+  rails_12factor!
   rspec-rails
-  sass-rails
-  sdoc (~> 0.4.0)
-  spring
-  thin
-  turbolinks
+  sdoc!
+  simple_form
+  spring!
+  therubyracer!
+  thin!
+  turbolinks!
   twitter-bootstrap-rails
   uglifier (>= 1.3.0)

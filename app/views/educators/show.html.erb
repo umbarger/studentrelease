@@ -4,14 +4,40 @@
 </div>
 
 <dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @educator.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:username) %>:</strong></dt>
+  <dd><%= @educator.username %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:encrypted_password) %>:</strong></dt>
+  <dd><%= @educator.encrypted_password %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:active) %>:</strong></dt>
+  <dd><%= @educator.active %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:reset_password_token) %>:</strong></dt>
+  <dd><%= @educator.reset_password_token %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:reset_password_sent_at) %>:</strong></dt>
+  <dd><%= @educator.reset_password_sent_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:remember_created_at) %>:</strong></dt>
+  <dd><%= @educator.remember_created_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:current_sign_in_at) %>:</strong></dt>
+  <dd><%= @educator.current_sign_in_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:last_sign_in_at) %>:</strong></dt>
+  <dd><%= @educator.last_sign_in_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:current_sign_in_ip) %>:</strong></dt>
+  <dd><%= @educator.current_sign_in_ip %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:last_sign_in_ip) %>:</strong></dt>
+  <dd><%= @educator.last_sign_in_ip %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:confirmation_token) %>:</strong></dt>
+  <dd><%= @educator.confirmation_token %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:confirmed_at) %>:</strong></dt>
+  <dd><%= @educator.confirmed_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:confirmation_sent_at) %>:</strong></dt>
+  <dd><%= @educator.confirmation_sent_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:unconfirmed_email) %>:</strong></dt>
+  <dd><%= @educator.unconfirmed_email %></dd>
   <dt><strong><%= model_class.human_attribute_name(:first_name) %>:</strong></dt>
   <dd><%= @educator.first_name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:last_name) %>:</strong></dt>
   <dd><%= @educator.last_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
-  <dd><%= @educator.email %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:active) %>:</strong></dt>
-  <dd><%= @educator.active %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

@@ -2,10 +2,7 @@ class StudentsController < ApplicationController
 
   before_action :set_family
   before_action :set_student, only: [ :show, :edit, :update, :destroy ]
-
-  def set_student
-    @student = @family.students.find( params[:id] )
-  end
+  before_action :set_teacher
 
   def new
     @student = @family.students.build
@@ -50,7 +47,11 @@ class StudentsController < ApplicationController
       @student = @family.students.find( params[:id] )
     end
 
+    def set_teacher
+      @teacher = @student.teacher    
+    end
+
     def student_params
-      params.require( :student ).permit( :first_name, :grade )
+      params.require( :student ).permit( :first_name, :last_name, :teacher_id, :active )
     end
 end

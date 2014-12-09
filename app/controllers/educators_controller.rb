@@ -20,7 +20,7 @@ class EducatorsController < ApplicationController
     
     respond_to do |format|
       if @educator.save
-        format.html { redirect_to @educator, notice: 'Educator has been created!' }
+        format.html { redirect_to @educator, notice: ' has been created!' }
         format.json { render :show, status: :created, location: @educator }
       else
         format.html { render :new }
@@ -32,7 +32,7 @@ class EducatorsController < ApplicationController
   def update
     respond_to do |format|
       if @educator.update( family_params )
-        format.html { redirect_to @educator, notice: 'Family has been updated.' }
+        format.html { redirect_to @educator, notice: ' has been updated.' }
         format.json { render :show, status: :ok, location: @educator }
       else
         format.html { render :edit }
@@ -45,7 +45,7 @@ class EducatorsController < ApplicationController
     @educator.update_attribute( :active, false )
     
     respond_to do |format|
-      format.html { redirect_to educators_url, notice: 'Educator was deleted.' }
+      format.html { redirect_to educators_url, notice: ' was deleted.' }
       format.json { head :no_content }
     end
   end
@@ -56,7 +56,7 @@ class EducatorsController < ApplicationController
     end
 
     def educator_params
-      params.require( :educator ).permit( :first_name, :last_name, :email )
+      params.require( :educator ).permit( :first_name, :last_name, :email, :active )
     end
 
 end
