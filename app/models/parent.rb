@@ -1,11 +1,13 @@
-class Parent < User
+class Parent
   include Mongoid::Document
   
   field :first_name, type: String
+  field :last_name, type: String
 
   embedded_in :family
 
-  validates_presence_of :first_name, message: "Name can't be blank."
+  validates_presence_of :first_name, message: " can't be blank."
+  validates_presence_of :last_name, message: " can't be blank."
 
   def self.active
     where( active: true )

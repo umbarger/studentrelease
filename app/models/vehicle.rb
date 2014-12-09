@@ -11,9 +11,7 @@ class Vehicle
 
   embedded_in :family
 
-  validates_presence_of :year, message: "Year can't be blank."
-  validates_presence_of :make, message: "Make can't be blank."
-  validates_presence_of :model, message: "Model can't be blank."
+  validates_presence_of :year, :make, :model, message: " can't be blank."
 
   def self.active
     where( active: true )

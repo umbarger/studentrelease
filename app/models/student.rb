@@ -7,8 +7,6 @@ class Student
   embedded_in :family
   belongs_to :teacher, autosave: true
 
-  accepts_nested_attributes_for :teacher
-
   validates_presence_of :first_name, message: " can't be blank."
   validates_presence_of :last_name, message: " can't be blank."
   validates_presence_of :teacher, message: " must have teacher."

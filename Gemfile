@@ -24,6 +24,7 @@ gem 'mongoid', :git => 'https://github.com/mongoid/mongoid.git'
 gem 'therubyracer', :git => 'https://github.com/cowboyd/therubyracer'
 gem 'less-rails', :git => 'https://github.com/metaskills/less-rails'
 gem 'twitter-bootstrap-rails'
+gem 'high_voltage'
 
 # simple form 
 gem 'simple_form'

@@ -1,0 +1,10 @@
+<%= simple_form_for @release, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :c_at %>
+  <%= error_span(@release[:c_at]) %>
+  <%= f.input :educator_id %>
+  <%= error_span(@release[:educator_id]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                releases_path, :class => 'btn btn-default' %>
+<% end %>

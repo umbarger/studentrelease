@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     resources :students
     resources :parents
     resources :vehicles
+    resources :releases
   end
 
   resources :educators
