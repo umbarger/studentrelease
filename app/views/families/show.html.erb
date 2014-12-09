@@ -25,16 +25,16 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Student</th>
-      <th>Grade</th>
+      <th>Name</th>
+      <th>Teacher</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @family.students.each do |student| %>
       <tr>
-        <td><%= student.first_name  %></td>
-        <td><%= student.grade %></td>
+        <td><%= "#{student.first_name} #{student.last_name}"  %></td>
+        <td><%= student.teacher %></td>
         <td><%= link_to "View", [ @family, student ], :class =>"btn btn-default btn-xs" %>  
       </tr>
     <% end %>
@@ -90,16 +90,3 @@
 <%= link_to "New Vehicle",
             new_family_vehicle_path( @family ),
             :class => 'btn btn-primary' %>
-
-
-<div class="btn-group" role="group" aria-label"...">
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              families_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_family_path(@family), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              family_path(@family),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
-</div>
