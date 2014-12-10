@@ -30,7 +30,12 @@ class ReleasesController < ApplicationController
       @release = Release.find( params[:id] )
     end
 
+    # def set_people
+    #   @student = Student.where( :id )
+    #   @teacher = Teacher.where( :id )
+    # end
+
     def release_params
-      params.require( :release ).permit( :c_at, :family_id, :teacher_id )
+      params.require( :release ).permit( :c_at, :student_id, :teacher_id )
     end
 end
