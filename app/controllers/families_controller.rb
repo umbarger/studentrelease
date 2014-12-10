@@ -1,4 +1,5 @@
 class FamiliesController < ApplicationController
+  before_filter :authenticate_user!, :only => [:index, :new]
   before_action :set_family, only: [:show, :edit, :update, :destroy]
 
   # GET /families
@@ -24,6 +25,9 @@ class FamiliesController < ApplicationController
   # POST /families
   # POST /families.json
   def create
+    mailer = Parentailer.new
+    mailer.send_email(params[:family_params]).deliver
+
     @family = Family.new( family_params )
 
     if @family.qrcode == 0 

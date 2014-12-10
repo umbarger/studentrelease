@@ -24,7 +24,7 @@ gem 'mongoid'
 gem 'bson_ext'
 
 
-gem 'mail' 
+gem 'devise'
 
 # Bootstrap frontend management
 gem 'less-rails'
