@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
           "devise_educator_application" # educator model will use this layout
         elseif resource_name == :teacher
           "devise_teacher_application" # teacher model will use this layout
-        elseif 
+        elseif resource_name == :parent
           "devise_parent_application" # parent model will use this layout
         else
           "devise_application" # all other devise models will use the default layout

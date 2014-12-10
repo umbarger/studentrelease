@@ -12,15 +12,15 @@ Rails.application.routes.draw do
 #                                          :sessions => "sessions",
 #                                          :passwords => "passwords" }
 
-#  devise_for :parents, :controllers => { :registrations => "registrations", 
-#                                          :confirmations => "confirmations",
-#                                          :sessions => "sessions",
-#                                          :passwords => "passwords" }
+  devise_for :parents, :controllers => { :registrations => "registrations", 
+                                          :confirmations => "confirmations",
+                                          :sessions => "sessions",
+                                          :passwords => "passwords" }
 
 
   devise_for :educators
   devise_for :teachers
-  devise_for :parents
+#  devise_for :parents
 
   resources :families do
     resources :students
