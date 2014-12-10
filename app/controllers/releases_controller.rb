@@ -33,5 +33,3 @@ class ReleasesController < ApplicationController
       params[:release]
     end
 end
-
-end
