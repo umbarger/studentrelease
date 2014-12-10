@@ -1,35 +1,26 @@
 Rails.application.routes.draw do
-  get 'passwords/new'
-
-  get 'passwords/create'
-
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'confirmations/new'
-
-  get 'confirmations/create'
-
-  get 'registrations/update'
 
   get 'home/index'
 
-  devise_for :educators, :controllers => {:registrations => "registrations", 
-                                          :confirmations => "confirmations", 
-                                          :sessions => "sessions",
-                                          :passwords => "passwords" }
+#  devise_for :educators, :controllers => {:registrations => "registrations", 
+#                                          :confirmations => "confirmations", 
+#                                          :sessions => "sessions",
+#                                          :passwords => "passwords" }
 
-  devise_for :teachers, :controllers => { :registrations => "registrations", 
-                                          :confirmations => "confirmations",
-                                          :sessions => "sessions",
-                                          :passwords => "passwords" }
+#  devise_for :teachers, :controllers => { :registrations => "registrations", 
+#                                          :confirmations => "confirmations",
+#                                          :sessions => "sessions",
+#                                          :passwords => "passwords" }
 
-  devise_for :parents, :controllers => { :registrations => "registrations", 
-                                          :confirmations => "confirmations",
-                                          :sessions => "sessions",
-                                          :passwords => "passwords" }
+#  devise_for :parents, :controllers => { :registrations => "registrations", 
+#                                          :confirmations => "confirmations",
+#                                          :sessions => "sessions",
+#                                          :passwords => "passwords" }
 
+
+  devise_for :educators
+  devise_for :teachers
+  devise_for :parents
 
   resources :families do
     resources :students
@@ -47,7 +38,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root to: 'families#index'
+  root to: 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

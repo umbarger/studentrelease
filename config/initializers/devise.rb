@@ -4,7 +4,7 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = '6793ba9ef58d56bf7a26fef10cf98d17f92ef35783d2550bf769cc7c46f8c8e00ebc42d5d8c649eaee798f780b7a710132bb4ee14af3ad1fcde78be1b54e87f8'
+  # config.secret_key = '26c9a86de4e8645d78401f5a1a6e36894861ce8ef526aa399bc996772b21949c20b39bc217df3ee7551377931d4b4fcbbce3ff3069a1843e6063c50c6322c718'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -29,9 +29,7 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  # config.authentication_keys = [ :email ] 
-  # config.authentication_keys = [ :username ]
-  config.authentication_keys = [ :signin ]
+  # config.authentication_keys = [ :email ]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -44,13 +42,11 @@ Devise.setup do |config|
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
   config.case_insensitive_keys = [ :email ]
-  config.case_insensitive_keys = [ :username ]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
   # modifying a user and when used to authenticate or find a user. Default is :email.
   config.strip_whitespace_keys = [ :email ]
-  config.strip_whitespace_keys = [ :username ]
 
   # Tell if authentication through request.params is enabled. True by default.
   # It can be set to an array that will enable params authentication only for the
@@ -101,7 +97,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '96422f5b01cb21c60c1e4777277c529d52ca79632605e8564965a3ab04f441f2f767537740223247ae5574060b29d851d774ed289191345a390e9e798206454d'
+  # config.pepper = '7cfb6d5635fc6de05660e60e9f1385bdbff0c8c86d2f28f9360d2f032156a8d3a163667cafcb1973b0da5ffcc0292a9eda61b144614c971b0e71794438240155'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -144,7 +140,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 8..128
+  config.password_length = 8..72
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
@@ -209,7 +205,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  config.scoped_views = true
+  # config.scoped_views = false
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
@@ -257,7 +253,7 @@ Devise.setup do |config|
   # The router that invoked `devise_for`, in the example above, would be:
   # config.router_name = :my_engine
   #
-  # When using omniauth, Devise cannot automatically set Omniauth path,
+  # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 end
