@@ -28,9 +28,6 @@ gem 'bson_ext'
 # Bootstrap frontend management
 gem 'twitter-bootstrap-rails'
 
-# Gem QREncode -> wrapper for libqrencode
-gem 'qrencoder'
-
 # development and test group
 group :development, :test do
   gem 'rspec-rails'
