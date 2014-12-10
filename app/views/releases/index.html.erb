@@ -5,20 +5,18 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:c_at) %></th>
-      <th><%= model_class.human_attribute_name(:family_id) %></th>
-      <th><%= model_class.human_attribute_name(:educator_id) %></th>
+      <th><%= model_class.human_attribute_name(:student_id) %></th>
+      <th><%= model_class.human_attribute_name(:teacher_id) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @releases.each do |release| %>
       <tr>
-        <td><%= link_to release.id, release_path(release) %></td>
-        <td><%= release.c_at %></td>
-        <td><%= release.family_id %></td>
-        <td><%= release.educator_id %></td>
+        <td><%= link_to release.c_at, release_path(release) %></td>
+        <td><%= release.student_id %></td>
+        <td><%= release.teacher_id %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_release_path(release), :class => 'btn btn-default btn-xs' %>

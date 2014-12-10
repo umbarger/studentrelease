@@ -8,7 +8,6 @@ class Teacher
     field :active, type: Boolean, default: true
 
   has_many :students
-
   has_many :releases
 
   validates_presence_of :first_name, :last_name,  message: " can't be blank."

@@ -1,4 +1,4 @@
-<%= form_for @release, :html => { :class => "form-horizontal release" } do |f| %>
+<%= form_for [@family,@release], :html => { :class => "form-horizontal release" } do |f| %>
 
     <% if @release.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -15,33 +15,20 @@
     </div>
   <% end %>
 
-  <div class="control-group">
-    <%= f.label :c_at, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :c_at, :class => 'form-control' %>
-    </div>
-    <%= error_span(@release[:c_at]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :family_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :family_id, :class => 'form-control' %>
-    </div>
-    <%= error_span(@release[:family_id]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :educator_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :educator_id, :class => 'form-control' %>
-    </div>
-    <%= error_span(@release[:educator_id]) %>
-  </div>
+
   <div class="control-group">
     <%= f.label :student_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :student_id, :class => 'form-control' %>
+      <%= collection_select( :release, :student_id, Student.active, :id, :last_name ) %>
     </div>
     <%= error_span(@release[:student_id]) %>
+  </div>
+    <div class="control-group">
+    <%= f.label :teacher_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= collection_select( :release, :teacher_id, Teacher.active, :id, :last_name ) %>
+    </div>
+    <%= error_span(@release[:release]) %>
   </div>
 
 

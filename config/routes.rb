@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   resources :families do
     resources :students
     resources :parents
-    resources :vehicles
+#    resources :vehicles
     resources :drivers
     resources :releases
   end
 
   resources :educators
-  
+  resources :releases 
   resources :teachers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -4,8 +4,7 @@ class Release
 
   index({ created_at: 1 },{ background: true })
   
-  belongs_to :family
-  belongs_to :educator
+  belongs_to :teacher
   belongs_to :student
 
 end

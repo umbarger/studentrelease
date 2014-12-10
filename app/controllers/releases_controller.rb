@@ -1,6 +1,6 @@
 class ReleasesController < ApplicationController
-
   before_action :set_release, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_parents
 
   def new
     @release = Release.new
@@ -14,7 +14,7 @@ class ReleasesController < ApplicationController
   end
 
   def create
-    @release = Release.build( student_params )
+    @release = Release.new( release_params )
     
     if @release.save
       flash[:notice] = "Release added."
@@ -25,11 +25,17 @@ class ReleasesController < ApplicationController
     end
   end
 
+  private
+    def set_parents
+      @student = Student.where( id: :student_id )
+      @teacher = Teacher.where( id: :teacher_id )
+    end
+
     def set_release
       @release = Release.find( params[:id] )
     end
 
     def release_params
-      params[:release]
+      params.require( :release ).permit( :c_at, :student_id, :teacher_id )
     end
 end

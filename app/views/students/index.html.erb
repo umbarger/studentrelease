@@ -8,10 +8,8 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:first_name) %></th>
       <th><%= model_class.human_attribute_name(:last_name) %></th>
-      <th><%= model_class.human_attribute_name(:active) %></th>
-      <th><%= model_class.human_attribute_name(:family_id) %></th>
-      <th><%= model_class.human_attribute_name(:teacher_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:family_name) %></th>
+      <th><%= model_class.human_attribute_name(:teacher_last_name) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -21,10 +19,8 @@
         <td><%= link_to student.id, student_path(student) %></td>
         <td><%= student.first_name %></td>
         <td><%= student.last_name %></td>
-        <td><%= student.active %></td>
-        <td><%= student.family_id %></td>
-        <td><%= student.teacher_id %></td>
-        <td><%=l student.created_at %></td>
+        <td><%= student.family_name %></td>
+        <td><%= student.teacher_last_name%></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_student_path(student), :class => 'btn btn-default btn-xs' %>

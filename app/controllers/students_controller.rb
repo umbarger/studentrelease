@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
 
-  before_action :set_family
+#  before_action :set_family
   before_action :set_student, only: [ :show, :edit, :update, :destroy ]
 
   def set_student
@@ -42,15 +42,15 @@ class StudentsController < ApplicationController
   end
 
   private
-    def set_family
-      @family = Family.find( params[ :family_id ] )
-    end
+ #   def set_family
+  #    @family = Family.find( params[ :family_id ] )
+   # end
 
     def set_student
       @student = @family.students.active.find( params[:id] )
     end
 
     def student_params
-      params.require( :student ).permit( :first_name, :last_name, :teacher, :active, :classroom, :grade )
+      params.require( :student ).permit( :first_name, :last_name, :teacher_id, :active, :classroom, :grade )
     end
 end
