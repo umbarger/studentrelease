@@ -3,12 +3,8 @@ class DriversController < ApplicationController
   before_action :set_family
   before_action :set_driver, only: [ :show, :edit, :update, :destroy ]
 
-  def set_student
-    @student = @family.drivers.find( params[:id] )
-  end
-
   def new
-    @student = @family.drivers.build
+    @driver = @family.drivers.build
   end
 
   def edit
@@ -22,7 +18,7 @@ class DriversController < ApplicationController
   end
 
   def create
-    @driver = @family.drivers.build( student_params )
+    @driver = @family.drivers.build( driver_params )
     
     if @driver.save
       flash[:notice] = "Authorized person added."
@@ -51,6 +47,6 @@ class DriversController < ApplicationController
     end
 
     def driver_params
-      params.require( :driver ).permit( :first_name, :last_name, :comments )
+      params.require( :driver ).permit( :first_name, :last_name, :comment )
     end
 end

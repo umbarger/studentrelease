@@ -5,7 +5,7 @@ class Driver
   field :last_name, type: String
   field :comment, type: String
   
-  field :active, type: Boolean
+  field :active, type: Boolean, default: true
 
   embedded_in :family
 

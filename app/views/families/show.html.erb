@@ -85,7 +85,7 @@
         <td><%= vehicle.model %></td>
         <td><%= vehicle.color %></td>
         <td><%= "#{vehicle.license} #{vehicle.state}" %></td>
-        <td><%= link_to "View", [ @family, vehicle ], :class => "btn btn-default btn-xs" %></td>
+        <td><%= link_to "View", [ @family, @vehicle ], :class => "btn btn-default btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -99,20 +99,21 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Comments</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @family.drivers.each do |driver| %>
       <tr>
-        <td><%= driver.name %></td>
-        <td><%= link_to "View", [ @family, vehicle ], :class => "btn btn-default btn-xs" %></td>
+        <td><%= "#{driver.first_name} #{driver.last_name}" %></td>
+        <td><%= driver.comment %>=
       </tr>
     <% end %>
   </tbody>
 </table>
 <%= link_to "Add Another Authorized Person",
-            new_family_driver_path( @family ),
+            new_family_vehicle_path( @family ),
             :class => 'btn btn-primary' %>
 
 <h3>Recent Releases</h3>

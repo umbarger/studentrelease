@@ -15,8 +15,8 @@
     <% @parents.each do |parent| %>
       <tr>
         <td><%= link_to parent.id, parent_path(parent) %></td>
-        <td><%= @student.last_name %></td>
-        <td><%= @teacher.last_name %></td>
+        <td><%= parent.first_name %></td>
+        <td><%= parent.last_name %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_parent_path(parent), :class => 'btn btn-default btn-xs' %>

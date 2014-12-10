@@ -23,6 +23,9 @@ gem 'spring',        group: :development
 gem 'mongoid'
 gem 'bson_ext'
 
+
+gem 'mail' 
+
 # Bootstrap frontend management
 gem 'less-rails'
 gem 'therubyracer'

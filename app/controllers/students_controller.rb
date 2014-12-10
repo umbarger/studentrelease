@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
 
-#  before_action :set_family
+  before_action :set_family
   before_action :set_student, only: [ :show, :edit, :update, :destroy ]
 
   def set_student
@@ -42,9 +42,9 @@ class StudentsController < ApplicationController
   end
 
   private
- #   def set_family
-  #    @family = Family.find( params[ :family_id ] )
-   # end
+   def set_family
+     @family = Family.find( params[ :family_id ] )
+   end
 
     def set_student
       @student = @family.students.active.find( params[:id] )

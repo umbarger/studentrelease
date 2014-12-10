@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+
   resources :families do
     resources :students
     resources :parents
-#    resources :vehicles
+    resources :vehicles
     resources :drivers
     resources :releases
   end
