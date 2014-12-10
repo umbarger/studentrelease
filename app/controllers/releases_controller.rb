@@ -30,7 +30,7 @@ class ReleasesController < ApplicationController
     end
 
     def release_params
-      params.require( :release ).permit( )
+      params[:release]
     end
 end
 
