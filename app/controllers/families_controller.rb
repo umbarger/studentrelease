@@ -26,6 +26,11 @@ class FamiliesController < ApplicationController
   def create
     @family = Family.new( family_params )
 
+    if @family.qrcode == 0 
+      code = Family.count + 1
+      @family.update_attribute( :qrcode, code )
+    end
+
     respond_to do |format|
       if @family.save
         format.html { redirect_to @family, notice: 'Family has been created!' }

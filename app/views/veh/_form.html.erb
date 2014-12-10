@@ -1,4 +1,4 @@
-<%= form_for [@family,@vehicle], :html => { :class => "form-horizontal vehicle" } do |f| %>
+<%= form_for [@family, @vehicle], :html => { :class => "form-horizontal vehicle" } do |f| %>
 
     <% if @vehicle.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -11,7 +11,7 @@
           <li><%= msg %></li>
         <% end %>
         </ul>
-      </div>
+      </div>S
     </div>
   <% end %>
 
@@ -57,9 +57,22 @@
     </div>
     <%= error_span(@vehicle[:state]) %>
   </div>
+  <div class="control-group">
+    <%= f.label :qr_num, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :qr_num, :class => 'form-control' %>
+    </div>
+    <%= error_span(@vehicle[:qr_num]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :active, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :active, :class => 'form-control' %>
+    </div>
+    <%= error_span(@vehicle[:active]) %>
+  </div>
+
 
   <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            family_path(@family), :class => 'btn btn-default' %>
 
 <% end %>

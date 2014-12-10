@@ -4,7 +4,7 @@ class Family
   field :name, type: String
   field :email, type: String
   field :active, type: Boolean, default: true
-  field :qrcode, type: Integer
+  field :qrcode, type: Integer, :default => :family_id
 
   index({ name: 1 })
   index({ email: 1 })
