@@ -1,4 +1,4 @@
-<%= form_for @student, :html => { :class => "form-horizontal student" } do |f| %>
+<%= form_for [@family, @student], :html => { :class => "form-horizontal student" } do |f| %>
 
     <% if @student.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -14,7 +14,7 @@
       </div>
     </div>
   <% end %>
-
+<div class ="row" >
   <div class="control-group">
     <%= f.label :first_name, :class => 'control-label' %>
     <div class="controls">
@@ -30,30 +30,13 @@
     <%= error_span(@student[:last_name]) %>
   </div>
   <div class="control-group">
-    <%= f.label :active, :class => 'control-label' %>
+    <%= f.label :teacher, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :active, :class => 'form-control' %>
-    </div>
-    <%= error_span(@student[:active]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :family_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :family_id, :class => 'form-control' %>
-    </div>
-    <%= error_span(@student[:family_id]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :teacher_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :teacher_id, :class => 'form-control' %>
+      <%= collection_select( :student, :teacher_id, Teacher.active, :id, :last_name ) %>
     </div>
     <%= error_span(@student[:teacher_id]) %>
   </div>
-
-
   <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            students_path, :class => 'btn btn-default' %>
+</div>
 
 <% end %>

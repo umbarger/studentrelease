@@ -1,0 +1,33 @@
+<%- model_class = Teacher -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <div class="btn-group" role="group" aria-label"...">
+    <%= link_to t('.back', :default => t("helpers.links.back")),
+              teachers_path, :class => 'btn btn-default'  %>
+    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_teacher_path(@teacher), :class => 'btn btn-default' %>
+    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              teacher_path(@teacher),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+    </div>
+
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:first_name) %>:</strong></dt>
+  <dd><%= @teacher.first_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:last_name) %>:</strong></dt>
+  <dd><%= @teacher.last_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @teacher.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:classroom) %>:</strong></dt>
+  <dd><%= @teacher.classroom %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:grade) %>:</strong></dt>
+  <dd><%= @teacher.grade %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:active) %>:</strong></dt>
+  <dd><%= @teacher.active %></dd>
+</dl>
+
+

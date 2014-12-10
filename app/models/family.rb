@@ -10,13 +10,13 @@ class Family
   index({ email: 1 })
   index({ name: 1, email: 1 }, { unique: true, name: "family_index", background: true })
 
-  embeds_many :students
+
   embeds_many :parents
   embeds_many :vehicles
-  embeds_many :releases
   embeds_many :drivers
 
-  accepts_nested_attributes_for :releases
+  has_many :students
+  has_many :releases
 
   validates_presence_of :name, message: 'Family has not been created!'
   validates_presence_of :email, message: 'Family has not been created!'

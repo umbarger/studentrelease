@@ -1,13 +1,13 @@
-<%= form_for @student, :html => { :class => "form-horizontal student" } do |f| %>
+<%= form_for @teacher, :html => { :class => "form-horizontal teacher" } do |f| %>
 
-    <% if @student.errors.any? %>
+    <% if @teacher.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h3>
+        <h3 class="panel-title"><%= pluralize(@teacher.errors.count, "error") %> prohibited this teacher from being saved:</h3>
       </div>
       <div class="panel-body">
         <ul>
-        <% @student.errors.full_messages.each do |msg| %>
+        <% @teacher.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
         </ul>
@@ -20,40 +20,40 @@
     <div class="controls">
       <%= f.text_field :first_name, :class => 'form-control' %>
     </div>
-    <%= error_span(@student[:first_name]) %>
+    <%= error_span(@teacher[:first_name]) %>
   </div>
   <div class="control-group">
     <%= f.label :last_name, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :last_name, :class => 'form-control' %>
     </div>
-    <%= error_span(@student[:last_name]) %>
+    <%= error_span(@teacher[:last_name]) %>
   </div>
   <div class="control-group">
-    <%= f.label :active, :class => 'control-label' %>
+    <%= f.label :email, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :active, :class => 'form-control' %>
+      <%= f.text_field :email, :class => 'form-control' %>
     </div>
-    <%= error_span(@student[:active]) %>
+    <%= error_span(@teacher[:email]) %>
   </div>
   <div class="control-group">
-    <%= f.label :family_id, :class => 'control-label' %>
+    <%= f.label :classroom, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :family_id, :class => 'form-control' %>
+      <%= f.text_field :classroom, :class => 'form-control' %>
     </div>
-    <%= error_span(@student[:family_id]) %>
+    <%= error_span(@teacher[:classroom]) %>
   </div>
   <div class="control-group">
-    <%= f.label :teacher_id, :class => 'control-label' %>
+    <%= f.label :grade, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :teacher_id, :class => 'form-control' %>
+      <%= f.text_field :grade, :class => 'form-control' %>
     </div>
-    <%= error_span(@student[:teacher_id]) %>
+    <%= error_span(@teacher[:grade]) %>
   </div>
 
 
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            students_path, :class => 'btn btn-default' %>
+            teachers_path, :class => 'btn btn-default' %>
 
 <% end %>
