@@ -1,6 +1,19 @@
 <%- model_class = Family -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => "#{@family.name.titleize} #{model_class.model_name.human.titleize}" %></h1>
+  <h1><%=t '.title', :default => "#{@family.name.titleize} #{model_class.model_name.human.titleize}" %>
+    <div class="btn-group" role="group" aria-label"...">
+      <%= link_to t('.back', :default => t("helpers.links.back")),
+                    families_path, :class => 'btn btn-default'  %>
+      <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                    edit_family_path(@family), :class => 'btn btn-default' %>
+      <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                    family_path(@family),
+                    :method => 'delete',
+                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", 
+                    :default => 'Are you sure?')) },
+                    :class => 'btn btn-danger' %>
+    </div>
+  </h1>
 </div>
 
 <dl>
@@ -12,17 +25,17 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Student</th>
-      <th>Grade</th>
+      <th>Name</th>
+      <th>Teacher</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <% @family.students.active.each do |student| %>
+    <% @family.students.each do |student| %>
       <tr>
-        <td><%= student.first_name  %></td>
-        <td><%= student.grade %></td>
-        <td><%= link_to "View", [ @family, student ], :class =>"btn btn-default btn-xs" %>  
+        <td><%= "#{student.first_name} #{student.last_name}"  %></td>
+        <td><%= student.teacher %></td>
+        <td><%= link_to "View", [ @family, student ], :class =>"btn btn-default btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -35,15 +48,15 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Parent</th>
+      <th>Name</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <% @family.parents.active.each do |parent| %>
+    <% @family.parents.each do |parent| %>
       <tr>
-        <td><%= parent.first_name %></td>
-        <td><%= link_to "View", [ @family, parent ], :class =>"btn btn-default btn-xs" %> 
+        <td><%= "#{parent.first_name} #{parent.last_name}" %></td>
+        <td><%= link_to "View", [ @family, parent ], :class =>"btn btn-default btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -60,21 +73,19 @@
       <th>Make</th>
       <th>Model</th>
       <th>Color</th>
-      <th>License</th>
-      <th>State</th>
+      <tr>License Plate</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <% @family.vehicles.active.each do |vehicle| %>
+    <% @family.vehicles.each do |vehicle| %>
       <tr>
         <td><%= vehicle.year %></td>
         <td><%= vehicle.make %></td>
         <td><%= vehicle.model %></td>
         <td><%= vehicle.color %></td>
-        <td><%= vehicle.license %></td>
-        <td><%= vehicle.state %></td>
-        <td><%= link_to "View", [ @family, vehicle ], :class =>"btn btn-default btn-xs" %> 
+        <td><%= "#{vehicle.license} #{vehicle.state}" %></td>
+        <td><%= link_to "View", [ @family, vehicle ], :class => "btn btn-default btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -83,36 +94,41 @@
             new_family_vehicle_path( @family ),
             :class => 'btn btn-primary' %>
 
-<h3>QR Codes</h3>
+<h3>Additional Persons Authorized To Pick Up Student</h3>
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Code Number</th>
+      <th>Name</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <% @family.qrcodes.each do |qrcode| %>
+    <% @family.drivers.each do |driver| %>
       <tr>
-        <td><%= qrcode.id %></td>
-        <td><%= link_to "View", [ @family, qrcode ], :class =>"btn btn-default btn-xs" %> 
+        <td><%= driver.name %></td>
+        <td><%= link_to "View", [ @family, vehicle ], :class => "btn btn-default btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to "New QR Code",
-            new_family_qrcode_path( @family ),
+<%= link_to "Add Another Authorized Person",
+            new_family_vehicle_path( @family ),
             :class => 'btn btn-primary' %>
-         
-<br>
-<br>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              families_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_family_path(@family), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              family_path(@family),
-              :method => 'destroy',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+<h3>Recent Releases</h3>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Release ID</th>
+      <th>Timestamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @family.releases.limit(30).each do |release| %>
+      <tr>
+        <td><%= release.ID %></td>
+        <td><%= release.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

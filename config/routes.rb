@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     resources :students
     resources :parents
     resources :vehicles
-    resources :qrcodes
+    resources :drivers
+    resources :releases
   end
 
   resources :educators
